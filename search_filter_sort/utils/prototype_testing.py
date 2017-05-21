@@ -30,16 +30,16 @@ def verify_search_fields(modules, class_exclusions=None, variable_exclusions=Non
                 class_items = {}
 
                 if "basic_search_list" not in all_class_items:
-                    print(class_object.__name__ + " is missing basic_search_list() static method")
+                    print((class_object.__name__ + " is missing basic_search_list() static method"))
 
                 if "special_search_list" not in all_class_items:
-                    print(class_object.__name__ + " is missing special_search_list() static method")
+                    print((class_object.__name__ + " is missing special_search_list() static method"))
 
                 if "object_dependencies" not in all_class_items:
-                    print(class_object.__name__ + " is missing object_dependencies() static method")
+                    print((class_object.__name__ + " is missing object_dependencies() static method"))
 
                 try:
-                    print(class_object._meta.fields)
+                    print((class_object._meta.fields))
                 except:
                     pass
 

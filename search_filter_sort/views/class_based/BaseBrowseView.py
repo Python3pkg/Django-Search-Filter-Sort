@@ -93,13 +93,13 @@ class BaseBrowseView(ListView):
 
         # Search, filter, sort
         if search_list:
-            list_of_search_bys_Q = [Q(**{key: value}) for key, value in search_list.items()]
+            list_of_search_bys_Q = [Q(**{key: value}) for key, value in list(search_list.items())]
             search_reduce = reduce(operator.or_, list_of_search_bys_Q)
         else:
             search_reduce = None
 
         if filter_list:
-            list_of_filter_bys_Q = [[Q(**{key: value}) for value in array] for key, array in filter_list.items()]
+            list_of_filter_bys_Q = [[Q(**{key: value}) for value in array] for key, array in list(filter_list.items())]
             reduced_filters = []
 
             for array in list_of_filter_bys_Q:
